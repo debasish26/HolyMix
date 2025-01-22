@@ -33,7 +33,7 @@ const AnimeVideoPlayer = ({
 
             playsInline
             title="Anime Episode"
-            src={videoSrc || "https://holymix-backend.onrender.com/videos/holymix.m3u8"}
+            src={videoSrc || "https://cdn.jsdelivr.net/gh/debasish26/holymixm3u8/holymix.m3u8"}
             onAutoPlay={onAutoPlay}
             onAutoPlayFail={onAutoPlayFail}
         >
