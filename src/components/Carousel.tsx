@@ -56,7 +56,7 @@ export function Carousel({
                         <img
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-[70vh] sm:h-[400px] md:h-[65vh] object-cover"
+                            className="w-full h-[50vh] sm:h-[400px] md:h-[65vh] object-cover"
                         />
                         <div className="absolute inset-0">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent" />
