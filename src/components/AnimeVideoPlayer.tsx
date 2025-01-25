@@ -321,7 +321,7 @@ const AnimeVideoPlayer = ({ videoSrc }: {
     return (
         <div
             ref={containerRef}
-            className="video-container relative bg-black w-full max-w-screen h-[38vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]"
+            className="video-container relative bg-black w-full max-w-screen h-[30vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
