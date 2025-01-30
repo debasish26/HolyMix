@@ -47,32 +47,41 @@ const Genres = () => {
     { name: 'Thriller', icon: <Skull size={16} />, color: 'bg-red-900' },
     { name: 'Vampire', icon: <Ghost size={16} />, color: 'bg-purple-900' }
   ];
-
-// Fetch anime by genre
-const fetchGenreData = useCallback(
+  const fetchGenreData = useCallback(
     debounce(async (genre) => {
       setGenreName(genre);
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch(`https://holymix-backend.onrender.com/api/genre/${genre.toLowerCase()}`);
+        const response = await fetch(
+          `https://holymix-backend.onrender.com/api/genre/${genre.toLowerCase()}`
+        );
         const data = await response.json();
-        setGenreAnime(data.data.animes?.map(anime => ({
-          id: anime.id,
-          title: anime.name,
-          image: anime.poster,
-          episodes: anime.episodes[0],
-          rating: anime.duration
-        })) || []);
+
+        setGenreAnime(
+          data?.data?.animes?.map((anime) => ({
+            id: anime?.id,
+            title: anime?.name,
+            image: anime?.poster,
+            episodes: anime?.episodes?.[0],
+            rating: anime?.duration,
+          })) || []
+        );
       } catch (error) {
+        console.error("Fetch error:", error);
         setError("Failed to fetch data. Please try again.");
       } finally {
         setLoading(false);
       }
-    }, 500), [] // 500ms debounce to reduce unnecessary API calls
+    }, 500),
+    [] // Ensure dependencies are properly handled
   );
 
+  // Wrapping debounce in a function to avoid async issues
+  const handleFetchGenre = (genre) => {
+    fetchGenreData(genre);
+  };
 
   return (
     <div className="bg-cover bg-center py-20 bg-fixed" style={{
