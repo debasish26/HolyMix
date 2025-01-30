@@ -1,7 +1,7 @@
 import React, { useState,useCallback  } from 'react';
 import { Sword, Mountain, Car, Laugh, Brain, Ghost, Theater, Heart, Wand2, GamepadIcon, Crown, Scroll, Skull, UserRound as Rose, Baby, Magnet as Magic, Swords, Notebook as Robot, Guitar as Military, Music, Search, Shield, Slice as Police, Brain as PsychologyIcon, HeartHandshake, School, Rocket, Users, Dumbbell, Zap, Moon, Film } from 'lucide-react';
 import { SearchComponents } from '../components/SearchComponents';
-import {debounce} from "lodash"; // Import debounce from lodash for optimization
+
 
 const Genres = () => {
     const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ const fetchGenreData = async (genre) => {
     setError(null);
 
     try {
-        const response = await fetch(`https://holymix-backend.onrender.com/api/genre/${genre.toLowerCase()}`);
+        const response = await fetch(`https://holymix-backend.onrender.com/api/genre/${genre}`);
         const data = await response.json();
         setGenreAnime(data.data.animes?.map(anime => ({
             id: anime.id,
