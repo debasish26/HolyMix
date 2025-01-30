@@ -43,28 +43,30 @@ const LOGIN_URL = import.meta.env.LOGIN_API;
     const endpoint = isLogin ? '/login' : '/register';
 
     try {
-      const response = await fetch(`https://holymix-login-backend.onrender.com${endpoint}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+        const response = await fetch(`http://127.0.0.1:3333${endpoint}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (!response.ok) throw new Error(data.error || 'Something went wrong');
+        if (!response.ok) throw new Error(data.error || 'Something went wrong');
 
-      if (!isLogin) {
-        localStorage.setItem('userId', data.userId);
-        setIsOtpSent(true);
-      } else {
-        localStorage.setItem('token', data.token);
-        showPopup('🎉 Welcome back, Senpai! You’re successfully logged in.', 'success');
-        navigate('/');
-      }
+        if (!isLogin) {
+            localStorage.setItem('userId', data.userId);
+            setIsOtpSent(true);
+        } else {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userId', data.userId); // Store userId on login
+            showPopup('🎉 Welcome back, Senpai! You’re successfully logged in.', 'success');
+            navigate('/');
+        }
     } catch (error: any) {
-      showPopup(`⚠️ ${error.message}`, 'error');
+        showPopup(`⚠️ ${error.message}`, 'error');
     }
-  };
+};
+
 
   if (isOtpSent) {
     return (
