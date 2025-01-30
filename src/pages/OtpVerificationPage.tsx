@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const OtpVerificationPage: React.FC<OtpVerificationPageProps> = ({ email, onVerify }) => {
     const [otp, setOtp] = useState('');
     const [loading, setLoading] = useState(false);
-    const [timer, setTimer] = useState(60); // 3 minutes in seconds
+    const [timer, setTimer] = useState(180); // 3 minutes in seconds
     const navigate = useNavigate(); // Hook for navigation
     const LOGIN_URL = import.meta.env.LOGIN_API;
     // Countdown timer logic
