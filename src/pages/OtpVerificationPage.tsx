@@ -34,9 +34,6 @@ const OtpVerificationPage: React.FC<OtpVerificationPageProps> = ({ email, onVeri
                 throw new Error(data.error || 'OTP verification failed');
             }
 
-            // Show success alert and provide instructions to the user
-            alert('OTP verification successful! Your email has been verified, and you can now log in.');
-
             // Notify parent component about successful verification
             onVerify(true);
         } catch (error: any) {
