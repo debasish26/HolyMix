@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://holymix.live/</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://holymix.live/accounts</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://holymix.live/genres</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://holymix.live/profile</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://holymix.live/faq</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://holymix.live/about</loc>
+        <lastmod>2025-01-30</lastmod>
+        <priority>0.6</priority>
+    </url>
+</urlset>
