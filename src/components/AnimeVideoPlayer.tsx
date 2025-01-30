@@ -17,7 +17,7 @@ const AnimeVideoPlayer = ({ videoSrc, tracks, introStart, introEnd, }: {
         <MediaPlayer
             src={videoSrc || "https://files.vidstack.io/sprite-fight/hls/stream.m3u8"}
 
-            className="w-full h-[70vh] bg-black"
+            className="relative bg-black w-full max-w-screen h-[30vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]"
             playsInline
             autoplay
 
